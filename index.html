@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<title>ブックマーク</title>
+		<style>
+			/* 表示サイズ */
+			.disp_size { font-size: 400%; }
+		</style>
+	</head>
+
+	<!-- データ部 -->
+	<!--
+		【ブックマークリストのデータ構造】
+		title : HTML文書のタイトル
+		bookmark_list : ブックマークの配列
+			[ブックマークの構造]
+			text : リンクに表示されるテキスト
+			url : リンク先のURL（下位階層がある場合無効）
+			discription : テキストの右に表示される説明（【】で囲まれて表示される）
+			bookmark_list : 下位階層のブックマークの配列（以下再帰構造）
+	-->
+	<script id="bookmarkData_default" type="application/json">
+		{
+			"title": "デフォルトのブックマーク"
+			, "bookmark_list": [
+				{
+					"text": "Google"
+					, "bookmark_list": [
+						{
+							"text": "検索"
+							, "url": "https://www.google.com/"
+						}
+						, {
+							"text": "Gmail"
+							, "url": "https://mail.google.com/"
+						}
+						, {
+							"text": "Googleマップ"
+							, "url": "https://www.google.co.jp/"
+						}
+					]
+				}
+				, {
+					"text": "Yahoo!"
+					, "bookmark_list": [
+						{
+							"text": "検索"
+							, "url": "https://www.yahoo.co.jp/"
+						}
+						, {
+							"text": "天気・災害"
+							, "url": "https://weather.yahoo.co.jp/weather/"
+						}
+					]
+				}
+			]
+		}
+	</script>
+
+	<!-- 表示部 -->
+	<body class="disp_size">
+		<input style="font-size: 100%;" type="button" value="全て開く" id="toggleChildList_top" onclick="toggleAllChildList();" />
+		<span style="padding-left: 5%"><span>
+		<input style="font-size: 100%;" type="button" value="＋" id="doSizeUp_top" onclick="doDispResize(1);" />
+		<input style="font-size: 100%;" type="button" value="－" id="doSizeDown_top" onclick="doDispResize(-1);" />
+		<ul style="ul_top" id="bookmarkList">
+		</ul>
+		<input style="font-size: 100%;" type="button" value="全て開く" id="toggleChildList_buttom" onclick="toggleAllChildList();" />
+		<span style="padding-left: 5%"><span>
+		<input style="font-size: 100%;" type="button" value="＋" id="doSizeUp_buttom" onclick="doDispResize(1);" />
+		<input style="font-size: 100%;" type="button" value="－" id="doSizeDown_buttom" onclick="doDispResize(-1);" />
+	</body>
+
+	<!-- 処理部 -->
+	<script>
+		/*
+		ページ表示時に処理されるメイン処理
+		*/
+		// [public定数]ブックマークデータID
+		var DEFAULT_ID = "default";
+		// [public]ブックマークリストの表示／非表示のDOM要素(ulタグ)のIDを生成するためのカウンタ
+		var ulCount = 0;
+		// [public]ブックマークリストの階層レベル
+		var ulLevel = 0;
+		// [public]下位階層の全てのブックマークリストの表示／非表示の状態
+		var isShowAllChildList = false;
+		// [public]デフォルトの表示サイズ
+		var defaultSize = 400;	
+		// [public]サイズ変更の係数
+		var resizeFac = 1.15;	
+		// GETパラメータからブックマークデータIDを取得する
+		var param = window.location.search;
+		var bookmarkDataId = ((!isUndef(param) && (param.length > 2)) ? param.substring(1) : DEFAULT_ID);
+		// ブックマークデータ(JSON)を取得する
+		var bookmarkListData = getBookmarkListData(bookmarkDataId);
+		// 非同期でブックマークリストを表示する
+		if (bookmarkListData != null) {
+			dispBookmarkList(bookmarkListData);
+		}
+		// 初期表記サイズを設定する
+		doDispResize(0);
+
+		/*
+		ブックマークリストのデータを取得する
+			@return ブックマークリストのデータ(JSON)
+		*/
+		function getBookmarkListData(bookmarkDataId) {
+			if (DEFAULT_ID == bookmarkDataId) {
+				// HTML文書内のブックマークデータ(JSON)を取得する
+				var jsonData = document.getElementById("bookmarkData_" + bookmarkDataId);
+				return ((jsonData != null) ? JSON.parse(jsonData.innerHTML) : null);
+			} else {
+				// HTTP経由でjsonファイルのブックマークリストのデータを取得する
+				// （表示は非同期で処理するため、戻り値はnull）
+				getBookmarkListDataFromHttp(bookmarkDataId);
+				return null;
+			}
+		}
+
+		/*
+		HTTP経由でjsonファイルのブックマークリストのデータを取得する
+			@return ブックマークリストのデータ(JSON)
+		*/
+		function getBookmarkListDataFromHttp(bookmarkDataId) {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4) {
+					if (xmlhttp.status == 200) {
+						// 非同期でブックマークリストを表示する
+						dispBookmarkList(JSON.parse(xmlhttp.responseText));
+					} else {
+						alert("指定したブックマークデータが取得できませんでした。"
+							+ "\nパラメータのブックマークデータIDを確認してください。"
+							+ "\nパラメータ = " + bookmarkDataId
+							+ "\nstatus = " + xmlhttp.status
+							);
+					}
+				}
+			}
+			xmlhttp.open("GET", bookmarkDataId + ".json");
+			xmlhttp.send();
+		}
+
+
+		/*
+		ブックマークリストを表示する
+			@param bookmarkListData ブックマークリストデータ(JSON)
+		*/
+		function dispBookmarkList(bookmarkListData){
+			// タイトルを設定する
+			if (!isUndef(bookmarkListData.title)) {
+				document.title = bookmarkListData.title;
+			}
+			// HTML文書内の最上位層のulタグを取得する
+			var ul = document.getElementById("bookmarkList");
+			ul.style.listStyle = "none";
+			// 取得したブックマークデータからブックマークリストを作成する
+			createBookmarkList(bookmarkListData.bookmark_list, ul);
+			// 初期表示は全てのブックマークリストを非表示に設定する
+			toggleAllChildList();
+		}
+
+		/*
+		ブックマークデータからブックマークリストを作成する
+			@param bookmarkListData ブックマークリストデータ(JSON)
+			@param ul ulタグ(DOM)
+			@return なし
+			再帰で呼び出して下位階層のブックマークリストの作成する。
+		*/
+		function createBookmarkList(bookmarkListData, ul) {
+			incUlLevel();
+			bookmarkListData.forEach(
+				function (bookmark) {
+
+					// aタグを生成する
+					var a = document.createElement("a");
+					// URLが指定されているかつ下位階層がない場合、aタグのhref属性を設定する
+					if (!isUndef(bookmark.url) && isUndef(bookmark.bookmark_list)) {
+						a.href = bookmark.url;
+					}
+					// ターゲットが指定されている場合、aタグのtarget属性を設定する
+					if (!isUndef(bookmark.target)) {
+						a.target = bookmark.target;
+					} else {
+						// ターゲットが指定されていない場合、固定(new)のターゲットに表示する
+						a.target = "new";
+					}
+					// 表示テキストのテキスト要素を生成する（下位階層がある場合、マークを付加）
+					var txt = document.createTextNode((!isUndef(bookmark.bookmark_list) ? "▼" : "") + bookmark.text);
+					// aタグの子要素にテキスト要素を追加する
+					a.appendChild(txt);
+
+					// ブックマークのliタグを生成する
+					var li = document.createElement("li");
+					// liタグの子要素にaタグを追加する
+					li.appendChild(a);
+
+					// 説明がある場合、liタグの子要素に説明のテキスト要素を追加する
+					if (!isUndef(bookmark.discription)) {
+						li.appendChild(document.createTextNode("【" + bookmark.discription + "】"))
+					}
+
+					// 下位階層がある場合、下位階層のブックマークリストを作成する
+					if (!isUndef(bookmark.bookmark_list)) {
+						// 下位階層のulタグを生成する
+						var chdUl = document.createElement("ul");
+						// ulタグにIDを設定する（JavaScriptで表示／非表示を制御するため）
+						var chdUlId = createUlId();
+						chdUl.id = chdUlId;
+						// 第２階層以下は非表示にする
+						chdUl.style.display = ((ulLevel > 0) ? "none" : "block");
+						// ブックマークリストの先頭には何も表示しない
+						chdUl.style.listStyle = "none";
+						// 下位階層のブックマークリストの表示／非表示を制御するためのstyle属性を設定する
+						a.setAttribute("onclick", "toggleChildList('" + chdUlId + "'); return false;");
+						// 下位階層のブックマークリストの表示／非表示を制御するためのJavaScriptを設定する
+						a.setAttribute("onclick", "toggleChildList('" + chdUlId + "'); return false;");
+						// 下位階層のブックマークリストを作成する
+						createBookmarkList(bookmark.bookmark_list, chdUl);
+						// 作成したブックマークリストのulタグをliタグの子要素に追加する
+						li.appendChild(chdUl);
+					}
+
+					// 上位階層のulタグにブックマークのliタグを追加する
+					ul.appendChild(li);
+
+				}
+			);
+			decUlLevel();
+		}
+
+		/*
+		ブックマークリストの表示／非表示のDOM要素(ulタグ)のIDを生成する
+			@return DOM要素(ulタグ)のID
+		*/
+		function createUlId() {
+			return "ul_" + String(ulCount++);
+		}
+
+		/*
+		ブックマークリストの階層レベルをインクリメントする
+			@return ブックマークリストの階層レベル
+		*/
+		function incUlLevel() {
+			return ulLevel++;
+		}
+
+		/*
+		ブックマークリストの階層レベルをデクリメントする
+			@return ブックマークリストの階層レベル
+		*/
+		function decUlLevel() {
+			return ulLevel--;
+		}
+
+		/*
+		オブジェクトがundefinedかどうか判定する
+			@param o オブジェクト
+			@return 判定結果（true:undefinedである、false:undefinedでない）
+		*/
+		function isUndef(o) {
+			return o === undefined;
+		}
+
+		/*
+		下位階層のブックマークリストの表示／非表示を切り替える
+			@param id 切り替えるブックマークリストのID
+			@return なし
+		*/
+		function toggleChildList(id) {
+			var chdUl = document.getElementById(id);
+			if (!isUndef(chdUl)) {
+				if (chdUl.style.display == "none") {
+					chdUl.style.display = "block";
+				} else {
+					chdUl.style.display = "none";
+				}
+			}
+		}
+
+		/*
+		下位階層の全てのブックマークリストの表示／非表示を切り替える
+			@return なし
+		*/
+		function toggleAllChildList() {
+			// 下位階層の全てのブックマークリストの表示／非表示を切り替える
+			Array.from(document.getElementsByTagName("ul")).forEach(
+				function (dom) {
+					if (dom.id.match(/^ul_.*$/)) {
+						dom.style.display = ((isShowAllChildList) ? "block" : "none");
+					}
+				}
+			);
+			// ボタンの表示テキストを切り替える
+			Array.from(document.getElementsByTagName("input")).forEach(
+				function (dom) {
+					if (dom.id.match(/^toggleChildList_.*$/)) {
+						dom.value = ((isShowAllChildList) ? "全て閉じる" : "全て開く");
+					}
+				}
+			);
+			// 全てのブックマークリストの表示／非表示の状態を切り替える
+			isShowAllChildList = !isShowAllChildList;
+		}
+
+		/*
+		表示サイズを変更する
+			@param cnt 変更カウント（正の数は大きく、負の数は小さく）
+			@return なし
+		*/
+		function doDispResize(cnt) {
+			var styleSheets = document.styleSheets;
+			var dispSizeCount = readDispSizeCount() + cnt;
+			for (var i = 0; i < styleSheets.length; i++) {
+				var cssRules = styleSheets[i].cssRules;
+				for (var j = 0; j < cssRules.length; j++) {
+					if (".disp_size" == cssRules[j].selectorText) {
+						cssRules[j].style.fontSize = String(defaultSize * Math.pow(resizeFac, dispSizeCount)) + "%";
+					}
+				}
+			}
+			writeDispSizeCount(dispSizeCount);
+		}
+
+		/*
+		表示サイズカウントを読み込む(cookie)
+			@return 表示サイズカウント
+		*/
+		function readDispSizeCount() {
+			var cookies = document.cookie.split(";");
+			for (var i = 0; i < cookies.length ; i++) {
+				var kv = cookies[i].split("=");
+				if (kv[0] == "dispSizeCount") {
+					return Number(kv[1]);
+				}
+			}
+			writeDispSizeCount(0);
+			return 0;
+		}
+
+		/*
+		表示サイズカウントを書き出す(cookie)
+			@return 表示サイズカウント
+		*/
+		function writeDispSizeCount(cnt) {
+			document.cookie = "dispSizeCount=" + String(cnt) + ";expires=Tue, 19 Jan 2038 03:14:07 GMT";
+		}
+	</script>
+</html>

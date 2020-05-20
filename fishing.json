@@ -1,0 +1,264 @@
+{
+	"title": "釣り関係のブックマーク"
+	, "bookmark_list": [
+		{
+			"text": "海天気.jp"
+			, "bookmark_list": [
+				{
+					"text": "宇野港"
+					, "url": "https://www.umitenki.jp/tenki/3283/3hours"
+				}
+				, {
+					"text": "下津井漁港"
+					, "url": "https://www.umitenki.jp/tenki/3319/3hours"
+				}
+				, {
+					"text": "笠岡港"
+					, "url": "https://www.umitenki.jp/tenki/3298/3hours"
+				}
+				, {
+					"text": "小飛島港"
+					, "url": "https://www.umitenki.jp/tenki/3303/3hours"
+				}
+				, {
+					"text": "宮浦港（直島）"
+					, "url": "https://www.umitenki.jp/tenki/3919/3hours"
+				}
+				, {
+					"text": "牛窓"
+					, "url": "https://www.umitenki.jp/tenki/3282/3hours"
+				}
+			]
+		}
+		, {
+			"text": "釣割タイドグラフ"
+			, "bookmark_list": [
+				{
+					"text": "宇野"
+					, "url": "https://tide.chowari.jp/tide.php?p=249"
+				}
+				, {
+					"text": "水島"
+					, "url": "https://tide.chowari.jp/tide.php?p=216"
+				}
+				, {
+					"text": "笠岡"
+					, "url": "https://tide.chowari.jp/tide.php?p=111"
+				}
+				, {
+					"text": "高松"
+					, "url": "https://tide.chowari.jp/tide.php?p=43"
+				}
+				, {
+					"text": "坂出"
+					, "url": "https://tide.chowari.jp/tide.php?p=57"
+				}
+				, {
+					"text": "与島"
+					, "url": "https://tide.chowari.jp/tide.php?p=258"
+				}
+				, {
+					"text": "男木島"
+					, "url": "https://tide.chowari.jp/tide.php?p=263"
+				}
+				, {
+					"text": "坂手(小豆島)"
+					, "url": "https://tide.chowari.jp/tide.php?p=16"
+				}
+				, {
+					"text": "青木(香川県広島)"
+					, "url": "https://tide.chowari.jp/tide.php?p=237"
+				}
+				, {
+					"text": "佐柳"
+					, "url": "https://tide.chowari.jp/tide.php?p=266"
+				}
+			]
+		}
+		, {
+			"text": "天気予報（岡山）"
+			, "bookmark_list": [
+				{
+					"text": "岡山市南区(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/7/36/6610/33104/"
+				}
+				, {
+					"text": "玉野市(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/7/36/6610/33204/"
+				}
+				, {
+					"text": "倉敷市(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/7/36/6610/33202/"
+				}
+				, {
+					"text": "笠岡市(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/7/36/6610/33205/"
+				}
+				, {
+					"text": "瀬戸内市(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/7/36/6610/33212/"
+				}
+				, {
+					"text": "備前市(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/7/36/6610/33211/"
+				}
+				, {
+					"text": "岡山県(気象庁)"
+					, "url": "https://www.jma.go.jp/jp/yoho/340.html"
+				}
+				, {
+					"text": "海の安全情報／気象現況（高松海上保安部）"
+					, "url": "https://www6.kaiho.mlit.go.jp/06kanku/takamatsu/kisyou.html"
+				}
+			]
+		}
+		, {
+			"text": "天気予報（香川）"
+			, "bookmark_list": [
+				{
+					"text": "高松市(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/8/40/7200/37201/"
+				}
+				, {
+					"text": "土庄町(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/8/40/7200/37322/"
+				}
+				, {
+					"text": "坂出市(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/8/40/7200/37203/"
+				}
+				, {
+					"text": "観音寺市(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/8/40/7200/37205/"
+				}
+				, {
+					"text": "香川県(気象庁)"
+					, "url": "https://www.jma.go.jp/jp/yoho/341.html"
+				}
+				, {
+					"text": "海の安全情報／気象現況（高松海上保安部）"
+					, "url": "https://www6.kaiho.mlit.go.jp/06kanku/takamatsu/kisyou.html"
+				}
+			]
+		}
+		, {
+			"text": "Windy"
+			, "bookmark_list": [
+				{
+					"text": "風"
+					, "url": "https://www.windy.com/?34.443,133.879,11"
+				}
+				, {
+					"text": "風浪"
+					, "url": "https://www.windy.com/ja/-%E9%A2%A8%E6%B5%AA-wwaves?wwaves,34.443,133.879,11"
+				}
+				, {
+					"text": "海流"
+					, "url": "https://www.windy.com/ja/-%E6%B5%B7%E6%B5%81-currents?currents,34.443,133.879,11"
+				}
+			]
+		}
+		, {
+			"text": "潮見表"
+			, "bookmark_list": [
+				{
+					"text": "宇野"
+					, "url": "http://sio.mieyell.jp/select?po=63306"
+				}
+				, {
+					"text": "下津井"
+					, "url": "http://sio.mieyell.jp/select?po=63307"
+				}
+				, {
+					"text": "笠岡"
+					, "url": "http://sio.mieyell.jp/select?po=63309"
+				}
+				, {
+					"text": "牛窓"
+					, "url": "http://sio.mieyell.jp/select?po=63303"
+				}
+				, {
+					"text": "高松"
+					, "url": "http://sio.mieyell.jp/select?po=73708"
+				}
+			]
+		}
+		, {
+			"text": "海水温"
+			, "bookmark_list": [
+				{
+					"text": "宇野沖（Windy）"
+					, "url": "https://www.windy.com/ja/-%E6%B5%B7%E6%B0%B4%E6%B8%A9-sst?sst,34.499,133.969,11,m:eCDajSq"
+				}
+				, {
+					"text": "牛窓沖海水温（岡山県水産研究所）"
+					, "url": "http://okayama-suishi.net/ListWeek.php"
+				}
+				, {
+					"text": "水温予報(屋島)（日本水産資源保護協会）"
+					, "url": "http://wtyoho.bioweather.net/info/yoho/yoho_t_yashi.html"
+				}
+			]
+		}
+		, {
+			"text": "釣果・魚種・ポイント"
+			, "bookmark_list": [
+				{
+					"text": "釣り情報（山陽新聞）"
+					, "url": "https://www.sanyonews.jp/town/fish"
+				}
+				, {
+					"text": "つり情報（四国新聞）"
+					, "url": "http://www.shikoku-np.co.jp/entertainment/fishing.aspx"
+				}
+				, {
+					"text": "瀬戸内各月の釣り物（釣り具のタイム）"
+					, "url": "http://www.f-time.jp/14882444249561"
+				}
+				, {
+					"text": "岡山の車で行ける海釣りポイント"
+					, "url": "https://okaturitai.com/"
+				}
+			]
+		}
+		, {
+			"text": "交通"
+			, "bookmark_list": [
+				{
+					"text": "直島"
+					, "bookmark_list": [
+						{
+							"text": "四国汽船時刻表"
+							, "url": "https://www.shikokukisen.com/instant/"
+						}
+						, {
+							"text": "町営バス時刻表(PDF)"
+							, "url": "http://www.naoshima.net/wp-content/uploads/2018/06/bus_jikokuhyo_160301kaitei.pdf"
+						}
+						, {
+							"text": "四国汽船運行状況(Twitter)"
+							, "url": "https://twitter.com/shikokukisen"
+						}
+					]
+				}
+				, {
+					"text": "笠岡航路時刻表（三洋汽船)"
+					, "url": "https://sanyo-kisen.jp/%E6%99%82%E5%88%BB%E8%A1%A8"
+				}
+			]
+		}
+		, {
+			"text": "その他"
+			, "bookmark_list": [
+				{
+					"text": "海の安全情報（海上保安庁第六管区）"
+					, "url": "https://www6.kaiho.mlit.go.jp/06kanku/"
+				}
+				, {
+					"text": "みんなの海図"
+					, "url": "https://mar-nets.com/"
+				}
+			]
+		}
+	]
+}
