@@ -27,32 +27,24 @@
 			"title": "デフォルトのブックマーク"
 			, "bookmark_list": [
 				{
-					"text": "Google"
+					"text": "ブックマーク"
 					, "bookmark_list": [
 						{
-							"text": "検索"
-							, "url": "https://www.google.com/"
+							"text": "釣り関係"
+							, "url": "https://saku-jp.github.io/Bookmark/?fishing"
 						}
 						, {
-							"text": "Gmail"
-							, "url": "https://mail.google.com/"
-						}
-						, {
-							"text": "Googleマップ"
-							, "url": "https://www.google.co.jp/"
+							"text": "雪山関係"
+							, "url": "https://saku-jp.github.io/Bookmark/?snow"
 						}
 					]
 				}
 				, {
-					"text": "Yahoo!"
+					"text": "ツール"
 					, "bookmark_list": [
 						{
-							"text": "検索"
-							, "url": "https://www.yahoo.co.jp/"
-						}
-						, {
-							"text": "天気・災害"
-							, "url": "https://weather.yahoo.co.jp/weather/"
+							"text": "GPX結合"
+							, "url": "https://saku-jp.github.io/MergeGpx/"
 						}
 					]
 				}
@@ -96,7 +88,7 @@
 		var bookmarkDataId = ((!isUndef(param) && (param.length > 2)) ? param.substring(1) : DEFAULT_ID);
 		// ブックマークデータ(JSON)を取得する
 		var bookmarkListData = getBookmarkListData(bookmarkDataId);
-		// 非同期でブックマークリストを表示する
+		// ブックマークリストを表示する
 		if (bookmarkListData != null) {
 			dispBookmarkList(bookmarkListData);
 		}
@@ -133,9 +125,12 @@
 						dispBookmarkList(JSON.parse(xmlhttp.responseText));
 					} else {
 						alert("指定したブックマークデータが取得できませんでした。"
+							+ "\nstatus = " + xmlhttp.status
+							+ "\n"
 							+ "\nパラメータのブックマークデータIDを確認してください。"
 							+ "\nパラメータ = " + bookmarkDataId
-							+ "\nstatus = " + xmlhttp.status
+							+ "\n"
+							+ "\nもしくは再度リクエストを送信するか、ネットワークの接続を確認してください。"
 							);
 					}
 				}
