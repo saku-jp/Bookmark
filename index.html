@@ -19,6 +19,8 @@
 			[ブックマークの構造]
 			text : リンクに表示されるテキスト
 			url : リンク先のURL（下位階層がある場合無効）
+			url_sp : スマートフォン用リンク先のURL（下位階層がある場合無効）
+			url_tab : タブレット用リンク先のURL（下位階層がある場合無効）
 			discription : テキストの右に表示される説明（【】で囲まれて表示される）
 			bookmark_list : 下位階層のブックマークの配列（以下再帰構造）
 	-->
@@ -55,13 +57,13 @@
 	<!-- 表示部 -->
 	<body class="disp_size">
 		<input style="font-size: 100%;" type="button" value="全て開く" id="toggleChildList_top" onclick="toggleAllChildList();" />
-		<span style="padding-left: 5%"><span>
+		<span style="padding-left: 5%"></span>
 		<input style="font-size: 100%;" type="button" value="＋" id="doSizeUp_top" onclick="doDispResize(1);" />
 		<input style="font-size: 100%;" type="button" value="－" id="doSizeDown_top" onclick="doDispResize(-1);" />
 		<ul style="ul_top" id="bookmarkList">
 		</ul>
 		<input style="font-size: 100%;" type="button" value="全て開く" id="toggleChildList_buttom" onclick="toggleAllChildList();" />
-		<span style="padding-left: 5%"><span>
+		<span style="padding-left: 5%"></span>
 		<input style="font-size: 100%;" type="button" value="＋" id="doSizeUp_buttom" onclick="doDispResize(1);" />
 		<input style="font-size: 100%;" type="button" value="－" id="doSizeDown_buttom" onclick="doDispResize(-1);" />
 	</body>
@@ -80,9 +82,9 @@
 		// [public]下位階層の全てのブックマークリストの表示／非表示の状態
 		var isShowAllChildList = false;
 		// [public]デフォルトの表示サイズ
-		var defaultSize = 400;	
+		var defaultSize = 400;
 		// [public]サイズ変更の係数
-		var resizeFac = 1.15;	
+		var resizeFac = 1.15;
 		// GETパラメータからブックマークデータIDを取得する
 		var param = window.location.search;
 		var bookmarkDataId = ((!isUndef(param) && (param.length > 2)) ? param.substring(1) : DEFAULT_ID);
@@ -174,7 +176,7 @@
 					var a = document.createElement("a");
 					// URLが指定されているかつ下位階層がない場合、aタグのhref属性を設定する
 					if (!isUndef(bookmark.url) && isUndef(bookmark.bookmark_list)) {
-						a.href = bookmark.url;
+						a.href = getBookmarkUrl(bookmark);
 					}
 					// ターゲットが指定されている場合、aタグのtarget属性を設定する
 					if (!isUndef(bookmark.target)) {
@@ -258,6 +260,58 @@
 		*/
 		function isUndef(o) {
 			return o === undefined;
+		}
+
+		/*
+		ブックマークのURLを取得する
+			@param bookmark ブックマークデータ
+			スマートフォン／タブレット用のURLの切り替えを行う。
+		*/
+		function getBookmarkUrl(bookmark) {
+			if (!isUndef(bookmark.url_sp)) {
+				if (isSmartphone()) {
+					return bookmark.url_sp;
+				}
+			}
+			if (!isUndef(bookmark.url_tab)) {
+				if (isTablet()) {
+					return bookmark.url_tab;
+				}
+			}
+			return bookmark.url;
+		}
+
+		/*
+		スマートフォンかどうかを判定する
+			@return 判定結果（true:スマートフォンである、false:スマートフォンでない）
+		 */
+		function isSmartphone() {
+			var ua = window.navigator.userAgent;
+			if (ua.indexOf("Mobile") >= 0) {
+				if ((ua.indexOf("iPhone") >= 0)
+						|| (ua.indexOf("iPod") >= 0)
+						|| (ua.indexOf("Android") >= 0)
+						) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		/*
+		タブレットかどうかを判定する
+			@return 判定結果（true:タブレットである、false:タブレットでない）
+		 */
+		function isTablet() {
+			var ua = window.navigator.userAgent;
+			if (ua.indexOf("Mobile") < 0) {
+				if ((ua.indexOf("iPod") >= 0)
+						|| (ua.indexOf("Android") >= 0)
+						) {
+					return true;
+				}
+			}
+			return false;
 		}
 
 		/*
