@@ -2,6 +2,120 @@
 	"title": "釣り関係のブックマーク"
 	, "bookmark_list": [
 		{
+			"text": "エリア別"
+			, "bookmark_list": [
+				{
+					"text": "宇野"
+					, "bookmark_list": [
+						{
+							"text": "宇野港(海天気.jp)"
+							, "url": "https://www.umitenki.jp/tenki/3283/3hours"
+						}
+						, {
+							"text": "宇野(釣割タイドグラフ)"
+							, "url":		"https://tide.chowari.jp/tide.php?p=249"
+							, "url_sp":		"https://www.chowari.jp/sp/tide/tide.php?p=249"
+						}
+						, {
+							"text": "玉野市(tenki.jp)"
+							, "url": "https://tenki.jp/forecast/7/36/6610/33204/"
+						}
+						, {
+							"text": "玉野市(ウェザーニュース)"
+							, "url": "https://weathernews.jp/onebox/34.515268/133.941271/q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E7%8E%89%E9%87%8E%E5%B8%82&v=a2c4f02042d5c06d6a6d6c10a0ebf41d6fd3a5d9631ab2f547ba2c72928c8dc0&lang=ja"
+						}
+					]
+				}
+				, {
+					"text": "直島"
+					, "bookmark_list": [
+{
+							"text": "宮浦港(海天気.jp)"
+							, "url": "https://www.umitenki.jp/tenki/3919/3hours"
+						}
+						, {
+							"text": "直島港[本村](海天気.jp)"
+							, "url": "https://www.umitenki.jp/tenki/3873/3hours"
+						}
+						, {
+							"text": "宇野(釣割タイドグラフ)"
+							, "url":		"https://tide.chowari.jp/tide.php?p=249"
+							, "url_sp":		"https://www.chowari.jp/sp/tide/tide.php?p=249"
+						}
+						, {
+							"text": "直島町(tenki.jp)"
+							, "url": "https://tenki.jp/forecast/8/40/7200/37364/"
+						}
+						, {
+							"text": "直島町(ウェザーニュース)"
+							, "url": "https://weathernews.jp/onebox/34.460514/133.988788/q=%E9%A6%99%E5%B7%9D%E7%9C%8C%E7%9B%B4%E5%B3%B6%E7%94%BA&v=74eb5c124eb0e34a1f0a49be321d95e8806c1a40f94110b0c31eebccd4d9fd7b&lang=ja"
+						}
+					]
+				}
+				, {
+					"text": "下津井・水島"
+					, "bookmark_list": [
+						{
+							"text": "下津井漁港(海天気.jp)"
+							, "url": "https://www.umitenki.jp/tenki/3319/3hours"
+						}
+						, {
+							"text": "与島(海天気.jp)"
+							, "url": "https://www.umitenki.jp/tenki/3938/3hours"
+						}
+						, {
+							"text": "水島(釣割タイドグラフ)"
+							, "url":		"https://tide.chowari.jp/tide.php?p=216"
+							, "url_sp":		"https://www.chowari.jp/sp/tide/tide.php?p=216"
+						}
+						, {
+							"text": "与島(釣割タイドグラフ)"
+							, "url":		"https://tide.chowari.jp/tide.php?p=258"
+							, "url_sp":		"https://www.chowari.jp/sp/tide/tide.php?p=258"
+						}
+						, {
+							"text": "倉敷市(tenki.jp)"
+							, "url": "https://tenki.jp/forecast/7/36/6610/33202/"
+						}
+						, {
+							"text": "倉敷市(ウェザーニュース)"
+							, "url": "https://weathernews.jp/onebox/34.563246/133.760162/q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%80%89%E6%95%B7%E5%B8%82&v=1ded2e97a350e372a9453ddb31cdbb979c560610dd0d1a8b3948ba3654b5f782&lang=ja"
+						}
+					]
+				}
+				, {
+					"text": "笠岡"
+					, "bookmark_list": [
+						{
+							"text": "笠岡港(海天気.jp)"
+							, "url": "https://www.umitenki.jp/tenki/3298/3hours"
+						}
+						, {
+							"text": "北木島港(海天気.jp)"
+							, "url": "https://www.umitenki.jp/tenki/3303/3hours"
+						}
+						, {
+							"text": "小飛島港(海天気.jp)"
+							, "url": "https://www.umitenki.jp/tenki/3303/3hours"
+						}
+						, {
+							"text": "笠岡(釣割タイドグラフ)"
+							, "url":		"https://tide.chowari.jp/tide.php?p=111"
+							, "url_sp":		"https://www.chowari.jp/sp/tide/tide.php?p=111"
+						}
+						, {
+							"text": "笠岡市(tenki.jp)"
+							, "url": "https://tenki.jp/forecast/7/36/6610/33205/"
+						}
+						, {
+							"text": "笠岡市(ウェザーニュース)"
+							, "url": "https://weathernews.jp/onebox/34.506394/133.507222/q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E7%AC%A0%E5%B2%A1%E5%B8%82&v=b5858dcc3db172f652ef049b72558225f935dc21a4f35cf9f87dd75e4a21ed5e&lang=ja"
+						}
+					]
+				}
+			]
+		}
+		, {
 			"text": "海天気.jp"
 			, "bookmark_list": [
 				{
@@ -17,15 +131,23 @@
 					, "url": "https://www.umitenki.jp/tenki/3298/3hours"
 				}
 				, {
+					"text": "北木島港"
+					, "url": "https://www.umitenki.jp/tenki/3303/3hours"
+				}
+				, {
 					"text": "小飛島港"
 					, "url": "https://www.umitenki.jp/tenki/3303/3hours"
 				}
 				, {
-					"text": "宮浦港（直島）"
+					"text": "宮浦港(直島)"
 					, "url": "https://www.umitenki.jp/tenki/3919/3hours"
 				}
 				, {
-					"text": "牛窓"
+					"text": "直島港[本村]"
+					, "url": "https://www.umitenki.jp/tenki/3873/3hours"
+				}
+				, {
+					"text": "牛窓港"
 					, "url": "https://www.umitenki.jp/tenki/3282/3hours"
 				}
 			]
@@ -93,24 +215,48 @@
 					, "url": "https://tenki.jp/forecast/7/36/6610/33104/"
 				}
 				, {
+					"text": "岡山市南区(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.601536/133.916750/q=%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8D%97%E5%8C%BA&v=3efabf52108b267701779eb30f00f76979f583f07065e797fe737fb18c3a70b9&lang=ja"
+				}
+				, {
 					"text": "玉野市(tenki.jp)"
 					, "url": "https://tenki.jp/forecast/7/36/6610/33204/"
+				}
+				, {
+					"text": "玉野市(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.515268/133.941271/q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E7%8E%89%E9%87%8E%E5%B8%82&v=a2c4f02042d5c06d6a6d6c10a0ebf41d6fd3a5d9631ab2f547ba2c72928c8dc0&lang=ja"
 				}
 				, {
 					"text": "倉敷市(tenki.jp)"
 					, "url": "https://tenki.jp/forecast/7/36/6610/33202/"
 				}
 				, {
+					"text": "倉敷市(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.563246/133.760162/q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%80%89%E6%95%B7%E5%B8%82&v=1ded2e97a350e372a9453ddb31cdbb979c560610dd0d1a8b3948ba3654b5f782&lang=ja"
+				}
+				, {
 					"text": "笠岡市(tenki.jp)"
 					, "url": "https://tenki.jp/forecast/7/36/6610/33205/"
+				}
+				, {
+					"text": "笠岡市(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.506394/133.507222/q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E7%AC%A0%E5%B2%A1%E5%B8%82&v=b5858dcc3db172f652ef049b72558225f935dc21a4f35cf9f87dd75e4a21ed5e&lang=ja"
 				}
 				, {
 					"text": "瀬戸内市(tenki.jp)"
 					, "url": "https://tenki.jp/forecast/7/36/6610/33212/"
 				}
 				, {
+					"text": "瀬戸内市(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.670304/134.110102/q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E7%80%AC%E6%88%B8%E5%86%85%E5%B8%82&v=0951e9d7bce0e402372f2a156f5c2e2508b8b76e938f679904d41a0693964d7f&lang=ja"
+				}
+				, {
 					"text": "備前市(tenki.jp)"
 					, "url": "https://tenki.jp/forecast/7/36/6610/33211/"
+				}
+				, {
+					"text": "備前市(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.776009/134.210519/q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%82%99%E5%89%8D%E5%B8%82&v=2bbf55d5d40a86ab784d7b11094f874215a436a661110e19c64332e615d7b52a&lang=ja"
 				}
 				, {
 					"text": "岡山県(気象庁)"
@@ -130,16 +276,40 @@
 					, "url": "https://tenki.jp/forecast/8/40/7200/37201/"
 				}
 				, {
+					"text": "高松市(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.311519/134.045361/q=%E9%A6%99%E5%B7%9D%E7%9C%8C%E9%AB%98%E6%9D%BE%E5%B8%82&v=b5f814e232fa10fe608d460adcbb4f0eaebb1509508b1dfa43a2c6f66cbf2964&lang=ja"
+				}
+				, {
+					"text": "直島町(tenki.jp)"
+					, "url": "https://tenki.jp/forecast/8/40/7200/37364/"
+				}
+				, {
+					"text": "直島町(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.460514/133.988788/q=%E9%A6%99%E5%B7%9D%E7%9C%8C%E7%9B%B4%E5%B3%B6%E7%94%BA&v=74eb5c124eb0e34a1f0a49be321d95e8806c1a40f94110b0c31eebccd4d9fd7b&lang=ja"
+				}
+				, {
 					"text": "土庄町(tenki.jp)"
 					, "url": "https://tenki.jp/forecast/8/40/7200/37322/"
+				}
+				, {
+					"text": "土庄町(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.497645/134.182639/q=%E9%A6%99%E5%B7%9D%E7%9C%8C%E5%9C%9F%E5%BA%84%E7%94%BA&v=25c0e72a272d0d0415d8639043bcbfc8c19a154d5a6fd10d51de8e527a523e53&lang=ja"
 				}
 				, {
 					"text": "坂出市(tenki.jp)"
 					, "url": "https://tenki.jp/forecast/8/40/7200/37203/"
 				}
 				, {
+					"text": "坂出市(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.325315/133.859667/q=%E9%A6%99%E5%B7%9D%E7%9C%8C%E5%9D%82%E5%87%BA%E5%B8%82&v=6234efc12afd655e901ac5e6728a90ca1d8d28e7a13d1a7a33c7efe525db6867&lang=ja"
+				}
+				, {
 					"text": "観音寺市(tenki.jp)"
 					, "url": "https://tenki.jp/forecast/8/40/7200/37205/"
+				}
+				, {
+					"text": "観音寺市(ウェザーニュース)"
+					, "url": "https://weathernews.jp/onebox/34.106324/133.665891/q=%E9%A6%99%E5%B7%9D%E7%9C%8C%E8%A6%B3%E9%9F%B3%E5%AF%BA%E5%B8%82&v=e5cda8e804197c870352d1dc00b040bfc21c0ac0619003141801287ad318cc17&lang=ja"
 				}
 				, {
 					"text": "香川県(気象庁)"
@@ -470,6 +640,15 @@
 				, {
 					"text": "みんなの海図"
 					, "url": "https://mar-nets.com/"
+				}
+			]
+		}
+		, {
+			"text": "ツール"
+			, "bookmark_list": [
+				{
+					"text": "[潮汐予測]TIDEforWIN(Windows)"
+					, "url": "http://fmie.cside7.com/program/tide.html"
 				}
 			]
 		}
