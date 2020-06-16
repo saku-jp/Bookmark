@@ -50,6 +50,18 @@
 							"text": "直島町(ウェザーニュース)"
 							, "url": "https://weathernews.jp/onebox/34.460514/133.988788/q=%E9%A6%99%E5%B7%9D%E7%9C%8C%E7%9B%B4%E5%B3%B6%E7%94%BA&v=74eb5c124eb0e34a1f0a49be321d95e8806c1a40f94110b0c31eebccd4d9fd7b&lang=ja"
 						}
+						, {
+							"text": "四国汽船時刻表"
+							, "url": "https://www.shikokukisen.com/instant/"
+						}
+						, {
+							"text": "町営バス時刻表(PDF)"
+							, "url": "http://www.naoshima.net/wp-content/uploads/2018/06/bus_jikokuhyo_160301kaitei.pdf"
+						}
+						, {
+							"text": "四国汽船運行状況(Twitter)"
+							, "url": "https://twitter.com/shikokukisen"
+						}
 					]
 				}
 				, {
@@ -110,6 +122,10 @@
 						, {
 							"text": "笠岡市(ウェザーニュース)"
 							, "url": "https://weathernews.jp/onebox/34.506394/133.507222/q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E7%AC%A0%E5%B2%A1%E5%B8%82&v=b5858dcc3db172f652ef049b72558225f935dc21a4f35cf9f87dd75e4a21ed5e&lang=ja"
+						}
+						, {
+							"text": "笠岡航路時刻表（三洋汽船)"
+							, "url": "https://sanyo-kisen.jp/%E6%99%82%E5%88%BB%E8%A1%A8"
 						}
 					]
 				}
